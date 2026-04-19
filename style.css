@@ -29,6 +29,102 @@ main {
     margin: 60px auto;
 }
 
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(75,44,130,0.8), rgba(106,63,201,0.8)),
+    url('imagens/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 60px 30px;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+/* MENU */
+#menu {
+    display: flex;
+    gap: 20px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+}
+
+/* HAMBURGUER */
+.hamburguer {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #ff3c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #cc2f2f;
+}
+
+.btn-secondary {
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+/* RESUMO */
+.resumo {
+    text-align: center;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+/* PROJETOS */
+.projeto p {
+    text-align: center;
+    max-width: 500px;
+    color: #333;
+}
+
+.img-projeto:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
 /* =====================
    TIPOGRAFIA
 ===================== */
@@ -41,14 +137,13 @@ h1, h2, h3 {
 
 .front {
     text-align: left;
-
 }
 
 .paixoes ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: left; /* centraliza tudo */
+    align-items: left;
     gap: 10px;
 }
 
@@ -61,7 +156,7 @@ h1, h2, h3 {
 .paixoes li img {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* 👈 agora funciona */
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -73,27 +168,23 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;        /* espaço entre h4 e imagem */
-    margin: 24px 0;   /* espaço entre cada projeto */
+    gap: 16px;
+    margin: 24px 0;
 }
 
+/* CORRIGIDO: as três ocorrências de .img-projeto foram mescladas em uma única regra */
 .img-projeto {
     width: 100%;
     max-width: 600px;
     height: 250px;
     object-fit: cover;
     border-radius: 12px;
-}
-
-.img-projeto {
     display: block;
-    margin: 0 auto;
-    margin-bottom: 32px; /* espaço abaixo da imagem */
+    margin: 0 auto 32px;
 }
 
 ul li {
     line-height: 1.6;
-   
 }
 
 hr {
@@ -114,15 +205,14 @@ hr {
 }
 
 /* =====================
-   LISTA DE FORMAÃ‡ÃƒO
+   LISTA DE FORMAÇÃO
 ===================== */
-
 .lista {
     list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 👈 ESSA LINHA RESOLVE */
+    align-items: center;
     gap: 20px;
 }
 
@@ -138,16 +228,13 @@ hr {
     background: #fff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto; /* 👈 garante centralização */
+    margin: 0 auto;
 }
 
 .lista li:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
-
-/* Espelho nos itens pares â€” sÃ³ em telas maiores */
-
 
 /* =====================
    IMAGEM DENTRO DA LISTA
@@ -158,7 +245,7 @@ hr {
     object-fit: contain;
     border-radius: 50%;
     flex-shrink: 0;
-    align-self: flex-start; /* ancora a imagem no topo esquerdo */
+    align-self: flex-start;
 }
 
 /* =====================
@@ -192,6 +279,7 @@ hr {
 
 /* =====================
    FOOTER
+   CORRIGIDO: as duas ocorrências de footer e footer-container foram mescladas
 ===================== */
 footer {
     max-width: 900px;
@@ -202,20 +290,22 @@ footer {
 .footer-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
+    gap: 10px;
     text-align: center;
 }
 
+/* CORRIGIDO: as duas ocorrências de .icones foram mescladas */
 .icones {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
+/* CORRIGIDO: o width conflitante (54px vs 50px) foi resolvido com um único valor */
 .icones img {
-    width: 54px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -228,12 +318,12 @@ footer {
 }
 
 /* =====================
-   RESPONSIVO â€” MOBILE
+   RESPONSIVO — MOBILE
 ===================== */
 @media (max-width: 768px) {
 
-     body {
-        background: #E8EEFF; /* ou #fff se quiser branco total */
+    body {
+        background: #E8EEFF;
     }
 
     main {
@@ -241,6 +331,26 @@ footer {
         margin: 0;
         padding: 24px 16px;
         border-radius: 0;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    #menu.ativo {
+        display: flex;
+    }
+
+    .hamburguer {
+        display: block;
     }
 
     .lista li {
@@ -257,9 +367,6 @@ footer {
     .img-projeto {
         width: 100%;
         height: auto;
-        display: block;
-        margin: 0 auto;
-        
     }
 
     .footer-container {
@@ -271,9 +378,27 @@ footer {
     .detalhes {
         display: none;
     }
+
+    /* CORRIGIDO: media query aninhada removida e movida para o nível raiz abaixo */
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
 }
+
 /* =====================
-   RESPONSIVO â€” DESKTOP
+   RESPONSIVO — DESKTOP
 ===================== */
 @media (min-width: 1024px) {
     body {
@@ -287,7 +412,7 @@ footer {
     }
 
     .lista li {
-        flex-direction: row; /* imagem esquerda */
+        flex-direction: row;
         align-items: center;
     }
 
@@ -306,16 +431,16 @@ footer {
 ===================== */
 @media (min-width: 768px) and (max-width: 1024px) {
     .lista li {
-        flex-direction: row; /* imagem esquerda */
+        flex-direction: row;
         align-items: center;
     }
 
     .lista li img {
-        align-self: flex-start; /* fixa no topo esquerdo */
+        align-self: flex-start;
     }
 
     .lista li .card-texto {
-        text-align: center; /* texto centralizado */
-        margin: 0 auto; /* centraliza o bloco de texto */
+        text-align: center;
+        margin: 0 auto;
     }
 }
