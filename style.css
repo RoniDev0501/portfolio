@@ -1,446 +1,899 @@
-@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap');
+/* ===== BASE / MOBILE FIRST ===== */
 
-/* =====================
-   RESET
-===================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* =====================
-   BASE
-===================== */
+html,
 body {
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #4B2C82, #6A3FC9, #9D6CFF, #E0D4FF, #FFFFFF);
+  width: 100%;
+  overflow-x: hidden;
 }
 
-main {
-    width: 85%;
-    max-width: 900px;
-    background: #E8EEFF;
-    padding: 50px;
-    border-radius: 15px;
-    margin: 60px auto;
+body {
+  background: #F5F0E8;
+   padding: 0 45px; 
 }
 
-/* HERO */
+body.dark {
+  background: #0a0a0a;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-projeto {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hdr-wrap {
+  background: #F5F0E8;
+  border: 0.5px solid #ddd8cc;
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'DM Sans', sans-serif;
+  margin: 1rem 0; /* ← remove margem lateral, mantém só top/bottom */
+  position: relative;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.hdr-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hdr-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #F5F0E8;
+}
+
+.hdr-logo-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px;
+  color: #1a1a1a;
+  transition: color 0.3s;
+}
+
+.hdr-nav {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: #F5F0E8;
+  border: 0.5px solid #ddd8cc;
+  border-radius: 20px;
+  padding: 16px 20px;
+  z-index: 100;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.hdr-nav.open {
+  display: flex;
+}
+
+.hdr-nav a {
+  font-size: 16px;
+  color: #3a3a3a;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hdr-nav a:hover {
+  background: rgba(99, 179, 237, 0.15);
+  color: #2b7fc7;
+}
+
+.hdr-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hdr-theme {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 0.5px solid #ccc5b5;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  transition: border-color 0.3s, color 0.3s, background 0.2s;
+}
+
+.hdr-theme:hover {
+  background: rgba(99, 179, 237, 0.15);
+  border-color: #63b3ed;
+  color: #2b7fc7;
+}
+
+.hdr-hamburger {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 0.5px solid #ccc5b5;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.hdr-hamburger:hover {
+  background: rgba(99, 179, 237, 0.15);
+  border-color: #63b3ed;
+}
+
+.hdr-hamburger:hover span {
+  background: #2b7fc7;
+}
+
+.hdr-hamburger span {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.3s, opacity 0.3s;
+}
+
+.hdr-hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hdr-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hdr-hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.hdr-cta {
+  display: none;
+}
+
 .hero {
-    background: linear-gradient(rgba(75,44,130,0.8), rgba(106,63,201,0.8)),
-    url('imagens/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    padding: 60px 30px;
-    color: white;
-    text-align: center;
-    margin-bottom: 40px;
+  width: 100%;
+  margin: 0.5rem 0 2rem;
+  background: #ede8df;
+  border: 0.5px solid #ddd8cc;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;      /* ← lado a lado já no mobile */
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+  min-height: 160px;
 }
 
-.hero h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
 }
 
-.hero p {
-    margin-bottom: 20px;
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;        /* ← remove o padding que afasta o texto da imagem */
+}
+
+.hero-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 6px;        /* ← quase zero, só 6px nas laterais */
+  gap: 6px;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: center;
+  width: 60%;
+}
+
+.hero picture {
+    width: 40%;
+    flex-shrink: 0;
+    display: flex;
+    align-self: stretch; /* ← preenche toda a altura do hero */
+}
+
+.hero-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 14px;       /* ← menor no mobile */
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.hero-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;       /* ← menor no mobile */
+  color: #5a5a5a;
+  line-height: 1.5;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-title {
+  font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem; /* 24px */
+  word-break: break-word;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.hero-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #5a5a5a;
+  line-height: 1.7;
+  margin: 0;
+  transition: color 0.3s;
+  display: none; /* ← esconde no mobile */
 }
 
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
 }
 
-.topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
+.hero-buttons a {
+  max-width: 100%;
 }
 
-.logo {
-    font-weight: bold;
+.hero,
+.hdr-wrap {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* MENU */
-#menu {
-    display: flex;
-    gap: 20px;
+/* ===== DARK MODE ===== */
+
+body.dark .hdr-wrap {
+  background: #1a1a1a;
+  border-color: #333;
 }
 
-#menu a {
-    text-decoration: none;
-    color: black;
+body.dark .hdr-logo-icon {
+  background: #F5F0E8;
+  color: #1a1a1a;
 }
 
-/* HAMBURGUER */
-.hamburguer {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
+body.dark .hdr-logo-name {
+  color: #F5F0E8;
 }
 
-.btn-primary {
-    background: #ff3c3c;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
+body.dark .hdr-nav {
+  background: #1a1a1a;
+  border-color: #333;
 }
 
-.btn-primary:hover {
-    background: #cc2f2f;
+body.dark .hdr-nav a {
+  color: #cccccc;
 }
 
-.btn-secondary {
-    border: 1px solid white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
+body.dark .hdr-nav a:hover {
+  background: rgba(99, 179, 237, 0.12);
+  color: #63b3ed;
 }
 
-/* RESUMO */
-.resumo {
-    text-align: center;
-    max-width: 600px;
-    margin: 10px auto;
+body.dark .hdr-theme {
+  border-color: #555;
+  color: #F5F0E8;
 }
 
-/* PROJETOS */
-.projeto p {
-    text-align: center;
-    max-width: 500px;
-    color: #333;
+body.dark .hdr-theme:hover {
+  background: rgba(99, 179, 237, 0.12);
+  border-color: #63b3ed;
+  color: #63b3ed;
 }
 
-.img-projeto:hover {
-    transform: scale(1.03);
-    transition: 0.3s;
+body.dark .hdr-hamburger {
+  border-color: #555;
 }
 
-/* =====================
-   TIPOGRAFIA
-===================== */
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    font-weight: 700;
-    color: #000000;
+body.dark .hdr-hamburger span {
+  background: #F5F0E8;
 }
 
-.front {
-    text-align: left;
+body.dark .hdr-hamburger:hover {
+  background: rgba(99, 179, 237, 0.12);
+  border-color: #63b3ed;
 }
 
-.paixoes ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 10px;
+body.dark .hdr-hamburger:hover span {
+  background: #63b3ed;
 }
 
-.paixoes li {
-    display: flex;
-    align-items: left;
-    gap: 10px;
+body.dark .hdr-cta {
+  background: #F5F0E8;
+  color: #1a1a1a;
+}
+
+body.dark .hero {
+  background: #111111;
+  border-color: #2a2a2a;
+}
+
+body.dark .hero-title {
+  color: #F5F0E8;
+}
+
+body.dark .hero-text {
+  color: #888;
+}
+
+/* ===== FORMAÇÃO - CARDS ===== */
+
+/* Remove bullets e espaçamentos padrão da <ul> */
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;           /* empilha os cards verticalmente */
+  flex-direction: column;
+  gap: 12px;               /* espaço entre cada card */
+}
+
+/* Cada <li> vira um card horizontal com ícone + texto lado a lado */
+.lista li {
+  display: flex;
+  align-items: center;     /* alinha ícone e texto no centro vertical */
+  gap: 14px;               /* espaço entre o ícone e o bloco de texto */
+  background: #fff;        /* fundo branco do card — altere se quiser outra cor */
+  border: 0.5px solid #ddd8cc; /* borda sutil — mesma cor já usada no teu header */
+  border-radius: 16px;     /* arredondamento do card — aumente para mais arredondado */
+  padding: 16px 18px;      /* espaço interno: vertical | horizontal */
+  transition: background 0.3s, border-color 0.3s; /* suaviza troca no dark mode */
+}
+
+/* Ícone/logo de cada formação */
+.lista li img {
+  width: 48px;             /* tamanho do ícone no mobile — altere conforme precisar */
+  height: 48px;
+  border-radius: 50%;      /* deixa o ícone circular, como na imagem */
+  object-fit: cover;       /* evita distorção da imagem */
+  flex-shrink: 0;          /* impede que o ícone encolha se o texto for longo */
+}
+
+.projeto:last-of-type {
+  padding-bottom: 12px; /* ← era 28px, reduza conforme precisar */
+  padding-top: -6px;
+}
+
+.card-texto {
+  display: flex;
+  flex-direction: column;  /* título, código e link empilhados verticalmente */
+  gap: 4px;                /* espaço entre cada linha de texto */
+  font-family: 'DM Sans', sans-serif; /* mesma fonte do teu projeto */
+  font-size: 13px;         /* tamanho base do texto no mobile */
+  color: #5a5a5a;          /* cor do texto secundário (código, rótulos) */
+  line-height: 1.5;
+}
+
+/* Nome do curso/formação em destaque */
+.card-texto strong {
+  font-size: 14px;         /* levemente maior que o texto normal */
+  color: #1a1a1a;          /* cor escura para o título */
+  font-weight: 600;
+}
+
+/* Link "Acessar certificado" */
+.card-texto a {
+  color: #7c5cbf;          /* roxo/lilás — mesma cor dos links na imagem */
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.card-texto a:hover {
+  color: #5a3fa0;          /* escurece o link no hover */
+}
+
+/* --- DARK MODE dos cards --- */
+body.dark .lista li {
+  background: #1a1a1a;     /* fundo escuro no dark mode — igual ao teu header dark */
+  border-color: #333;
+}
+
+body.dark .card-texto {
+  color: #999;             /* texto secundário mais claro no dark */
+}
+
+body.dark .card-texto strong {
+  color: #F5F0E8;          /* título claro no dark — mesma cor creme do teu projeto */
+}
+
+body.dark .card-texto a {
+  color: #a585e0;          /* link mais claro no dark para manter contraste */
+}
+
+@keyframes pular {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);   /* ← sombra normal no chão */
+  }
+  50% {
+    transform: translateY(-10px);
+    box-shadow: 0 14px 16px rgba(0,0,0,0.1); /* ← sombra maior/mais suave no ar */
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);   /* ← volta à sombra normal */
+  }
 }
 
 .paixoes li img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: pular 1.2s ease-in-out infinite; /* ← aplica o pulo contínuo */
 }
 
-h4 {
-    text-align: center;
+.paixoes ul {
+  list-style: none;        /* ← remove os bullets da lista */
+  display: flex;           /* ← coloca os itens em linha */
+  flex-direction: row;     /* ← lado a lado */
+  gap: 64px;               /* ← espaço entre cada skill */
+  justify-content: center; /* ← centraliza no mobile */
+  flex-wrap: wrap;         /* ← quebra linha se não couber */
+  padding: 0;
+  margin-top: 16px; /* ← adicione esta linha: distância do h2 para os ícones*/
+  margin-bottom: 12px;
+}
+
+.paixoes li {
+  display: flex;
+  flex-direction: column;  /* ← ícone em cima, texto embaixo */
+  align-items: center;     /* ← centraliza cada item */
+  gap: 05px;
+  font-size: 14px;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700; 
+  font-size: 22px;
+  padding-top: 05px;
+  padding-bottom: 15px;
+}
+
+p {
+  font-size: 16px;      
+  max-width: 100%;        
+  word-wrap: break-word;
+
+
+}
+
+.btn-primary {
+    background: #e84040;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0A66C2;
+    border: 1.5px solid #0A66C2;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background: rgba(10,102,194,0.08);
+}
+
+.btn-secondary.btn-linkedin,
+.btn-secondary.btn-linkedin:hover {
+    color: #0A66C2;
+    border-color: #0A66C2;
 }
 
 .projeto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin: 24px 0;
+            
+ padding: 0 0 28px 0;
+            
 }
 
-/* CORRIGIDO: as três ocorrências de .img-projeto foram mescladas em uma única regra */
-.img-projeto {
-    width: 100%;
-    max-width: 600px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto 32px;
+.projeto1 {
+            
+ padding: 0 0 28px 0;
+            
 }
 
-ul li {
-    line-height: 1.6;
+.projeto p {
+  margin-top:0px;  /* ← espaço entre o h4 e o parágrafo */
+  margin-bottom: 10px; /* ← espaço entre o parágrafo e a imagem */
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background-color: black;
+h4 {
+  text-align: center;
+  margin-bottom: 10px;
+
 }
 
-/* =====================
-   FOTO DE PERFIL
-===================== */
-.foto {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    display: block;
-    margin: 15px auto;
-}
-
-/* =====================
-   LISTA DE FORMAÇÃO
-===================== */
-.lista {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.lista li {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 16px;
-    width: 100%;
-    max-width: 700px;
-    padding: 20px;
-    border-radius: 12px;
-    background: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto;
-}
-
-.lista li:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-}
-
-/* =====================
-   IMAGEM DENTRO DA LISTA
-===================== */
-.lista li img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    border-radius: 50%;
-    flex-shrink: 0;
-    align-self: flex-start;
-}
-
-/* =====================
-   TEXTO DO CARD
-===================== */
-.card-texto {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex: 1;
-    font-size: 14px;
-}
-
-.card-texto a {
-    margin-top: 5px;
-    text-decoration: none;
-    color: #5a4cff;
-}
-
-.lista a {
-    color: #000;
-    text-decoration: underline;
-}
-
-.lista li strong,
-.lista li a {
-    display: block;
-    font-size: 0.9em;
-    color: #6A3FC9;
-}
-
-/* =====================
-   FOOTER
-   CORRIGIDO: as duas ocorrências de footer e footer-container foram mescladas
-===================== */
-footer {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 40px;
-}
+/* ===== FOOTER ===== */
 
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
+  display: flex;              /* coloca ícones e copyright lado a lado ou empilhados */
+  flex-direction: column;     /* copyright embaixo dos ícones no mobile */
+  align-items: center;        /* centraliza tudo horizontalmente */
+  gap: 12px;                  /* espaço entre a linha de ícones e o copyright */
+  padding: 24px 0;            /* respiro acima e abaixo do footer */
 }
 
-/* CORRIGIDO: as duas ocorrências de .icones foram mescladas */
 .icones {
-    display: flex;
-    gap: 15px;
-    align-items: center;
+  display: flex;              /* ← isso é o que coloca os ícones lado a lado */
+  flex-direction: row;        /* ← horizontal, em vez de empilhado */
+  align-items: center;        /* alinha verticalmente no centro */
+  gap: 16px;                  /* espaço entre cada ícone — aumente se quiser mais distância */
 }
 
-/* CORRIGIDO: o width conflitante (54px vs 50px) foi resolvido com um único valor */
 .icones img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
+  width: 40px;                /* tamanho dos ícones — altere conforme precisar */
+  height: 40px;
+  border-radius: 50%;         /* mantém circular */
+  object-fit: cover;
 }
 
 .copyright {
-    margin: 0;
-    line-height: 1;
-    text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;            /* tamanho do texto de copyright */
+  color: #5a5a5a;
+  text-align: center;
 }
 
-/* =====================
-   RESPONSIVO — MOBILE
-===================== */
-@media (max-width: 768px) {
-
-    body {
-        background: #E8EEFF;
-    }
-
-    main {
-        width: 100%;
-        margin: 0;
-        padding: 24px 16px;
-        border-radius: 0;
-    }
-
-    #menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 10px;
-        background: white;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    #menu.ativo {
-        display: flex;
-    }
-
-    .hamburguer {
-        display: block;
-    }
-
-    .lista li {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .lista li img {
-        width: 48px;
-        height: 48px;
-    }
-
-    .img-projeto {
-        width: 100%;
-        height: auto;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .detalhes {
-        display: none;
-    }
-
-    /* CORRIGIDO: media query aninhada removida e movida para o nível raiz abaixo */
-    .hero {
-        padding: 40px 20px;
-    }
-
-    .hero h1 {
-        font-size: 22px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
+/* dark mode do footer */
+body.dark .copyright {
+  color: #777;
 }
 
-/* =====================
-   RESPONSIVO — DESKTOP
-===================== */
+#formacao h2 {
+   margin-top: 10px;     /* ← espaço acima do título FORMAÇÃO */
+   margin-bottom: 08px;  /* ← espaço entre o título e o primeiro card — ajuste aqui */
+}
+
 @media (min-width: 1024px) {
-    body {
-        background-color: #283333;
-    }
 
-    main {
-        border-radius: 16px;
-        box-shadow: 30px 50px 70px #45858C;
-        backdrop-filter: blur(6px);
-    }
+  .lista li {
+   gap: 32px;               /* ← ERA 20px — aumenta a distância entre ícone e texto */
+   padding: 20px 24px;
+   border-radius: 20px;
+ }
 
-    .lista li {
-        flex-direction: row;
-        align-items: center;
-    }
+  .hdr-wrap {
+    max-width: 860px;
+    margin: 1.5rem auto;
+  }
 
-    .lista li img {
-        align-self: flex-start;
-    }
+  .hdr-nav {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 6px;
+  }
 
-    .lista li .card-texto {
-        text-align: center;
-        margin: 0 auto;
-    }
+  body.dark .hdr-nav {
+    background: transparent;
+    border: none;
+  }
+
+  .hdr-nav a {
+    font-size: 18px;
+  }
+
+  .hdr-hamburger {
+    display: none;
+  }
+
+  .hdr-cta {
+    display: block;
+    background: #1a1a1a;
+    color: #F5F0E8;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    padding: 9px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .hdr-cta:hover {
+    opacity: 0.85;
+  }
+
+  .hero {
+    flex-direction: row;      /* ← foto à esquerda, conteúdo à direita */
+    max-width: 860px;
+    margin: 0.5rem auto 2rem;
+    min-height: 220px;
+  }
+
+  .hero-image {
+    width: 38%;
+    height: auto;
+    min-height: 220px;
+  }
+
+   .hero-body {
+    flex: 1;
+    padding: 32px 36px;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-content {
+     padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-text {
+    font-size: 14px;
+     display: block; /* ← aparece no desktop */
+    font-size: 14px;
+  }
+    .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700; /* Você importou do 400 ao 900, então pode usar pesos mais grossos */
+    letter-spacing: 1px;
+
+  }
+
+  p {
+  font-size: 18px; /* ← sobe o tamanho só no desktop */
+ }
 }
 
-/* =====================
-   TABLET (768px - 1024px)
-===================== */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .lista li {
-        flex-direction: row;
-        align-items: center;
-    }
+/* ===== MIN-WIDTH 1280px ===== */
 
-    .lista li img {
-        align-self: flex-start;
-    }
+@media (min-width: 1280px) {
 
-    .lista li .card-texto {
-        text-align: center;
-        margin: 0 auto;
-    }
+  p {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  .hdr-wrap {
+    max-width: 1000px;
+  }
+
+  .hero {
+    max-width: 1000px;
+    min-height: 260px;
+  }
+
+  .hero-image {
+    width: 70%;
+    min-height: 260px;
+  }
+
+  /* ↓ REDUZ PADDING ESQUERDO PARA APROXIMAR O TEXTO DA IMAGEM */
+  .hero-content {
+    padding: 10px 08px 14px 06px; /* lado esquerdo menor = texto mais perto da foto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* ↓ HERO-BODY zerado pois o espaçamento já é controlado pelo hero-content acima */
+  .hero-body {
+    padding: 0;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    display: block; /* ← mantém aparecendo */
+    font-size: 18px;
+  }
+
+  .paixoes ul {
+    gap: 300px;
+  }
+
+  /* DEPOIS — separa cada h2 por contexto */
+
+h2 {
+  font-size: 60px;
+
+ }
+
+/* h2 das seções genéricas (Hard Skills, Projetos, nome) */
+section h2,
+body > h2 {
+   margin-top: 75px;    /* ← espaço grande só nas seções que precisam */
+   margin-bottom: 0px;
+}
+
+#formacao h2 {
+   margin-top: 10px;
+   margin-bottom: 20px;  /* ← ERA -80px — valor negativo causa sobreposição */
+}
+
+ .projeto1 {
+   margin-top: 0px;
+
+  }
+
+ h4 {
+   margin-bottom:25px;
+   font-size: 40px;
+  }
+
+ p {
+   font-size: 35px;
+   margin-bottom: 40px;
+  } 
+
+ .img-projeto {
+    width: 130%;       /* ← reduz o tamanho */
+    max-width: 1000px; /* ← limite máximo */
+    margin: 0 auto;   /* ← centraliza */
+    margin-bottom: 37px;
+    margin-top: 25px;
+    border-radius: 20px;
+  }
+
+  .img-projetos {
+    width: 130%;       /* ← reduz o tamanho */
+    max-width: 1000px; /* ← limite máximo */
+    margin: 0 auto;   /* ← centraliza */
+  }
+
+.paixoes li img {
+  margin-top: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: pular 1.2s ease-in-out infinite;
+}
+
+.lista li {
+  gap: 48px;
+  padding: 24px 32px;
+  border-radius: 24px;
+  align-items: flex-start;  /* ← ícone e texto alinham pelo topo, não pelo centro */
+}
+
+.card-texto {
+  flex: 1;                  /* ← ocupa todo o espaço restante após o ícone */
+ padding-left: 250px;
+ font-size: 18px;
+  
+}
+
+.lista {
+  max-width: 1100px;        /* ← limita a largura da lista — ajuste conforme quiser */
+  margin: 0 auto;          /* ← centraliza a lista horizontalmente na página */
+}
+  
+.icones img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;    /* ← ERA 180px — use sempre 50% para círculo */
+}
+
+ .lista li img {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+ }
+
+ .footer-container {
+    flex-direction: row;          /* ← ícones e copyright lado a lado */
+    justify-content: center;      /* ← centraliza o conjunto */
+    align-items: center;          /* ← alinha verticalmente */
+    gap: 40px;                    /* ← espaço entre os ícones e o texto */
+    
+  }
+
+ .footer-container img {
+  width: 68px;
+  height: 68px;
+  padding-top: 05px;
+  padding-left: 20px;
+}
+
+.icones {
+  gap: 180px;
+
+}
+
+.footer-container p {
+  font-size: 30px;
+  padding-top: 38px;
+  padding-left: 60px;
+  color: #0a0a0a;
+
+}
+ 
+.resumo {
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+}
+
+.card-texto strong {
+  font-size: 20px;         /* ← aumente ou diminua conforme quiser */
+}
+
+.card-texto a {
+  font-size: 18px;         /* ← aumente ou diminua conforme quiser */
+}
 }
