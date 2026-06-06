@@ -573,19 +573,19 @@ h4 {
   display: flex;              /* ← isso é o que coloca os ícones lado a lado */
   flex-direction: row;        /* ← horizontal, em vez de empilhado */
   align-items: center;        /* alinha verticalmente no centro */
-  gap: 16px;                  /* espaço entre cada ícone — aumente se quiser mais distância */
+  gap: 45px;                  /* espaço entre cada ícone — aumente se quiser mais distância */
 }
 
 .icones img {
-  width: 40px;                /* tamanho dos ícones — altere conforme precisar */
-  height: 40px;
+  width: 46px;                /* tamanho dos ícones — altere conforme precisar */
+  height: 46px;
   border-radius: 50%;         /* mantém circular */
   object-fit: cover;
 }
 
 .copyright {
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;            /* tamanho do texto de copyright */
+  font-size: 20px;            /* tamanho do texto de copyright */
   color: #5a5a5a;
   text-align: center;
 }
