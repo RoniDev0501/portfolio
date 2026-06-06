@@ -43,7 +43,10 @@ img {
   align-items: center;
   justify-content: space-between;
   font-family: 'DM Sans', sans-serif;
-  margin: 1rem 0; /* ← remove margem lateral, mantém só top/bottom */
+  width: calc(100% + 90px);
+  margin-left: -45px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   position: relative;
   transition: background 0.3s, border-color 0.3s;
 }
@@ -179,8 +182,9 @@ img {
 }
 
 .hero {
-  width: 100%;
-  margin: 0.5rem 0 2rem;
+  width: calc(100% + 90px);
+  margin-left: -45px;
+  margin-right: 0;
   background: #ede8df;
   border: 0.5px solid #ddd8cc;
   border-radius: 24px;
@@ -189,6 +193,7 @@ img {
   overflow: hidden;
   transition: background 0.3s, border-color 0.3s;
   min-height: 160px;
+  margin-bottom: 1.3rem; /* ← espaço abaixo do hero, antes do h2 */
 }
 
 .hero-image {
@@ -278,13 +283,6 @@ img {
 
 .hero-buttons a {
   max-width: 100%;
-}
-
-.hero,
-.hdr-wrap {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* ===== DARK MODE ===== */
