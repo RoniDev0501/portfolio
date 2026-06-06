@@ -1,228 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="imagens/favicon-32x32.png" type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
-        <title> Ronivaldo Brito | Portfólio Desenvolvedor Front-End </title>
-        <script>
-            function toggleMenu() {
-                document.getElementById("menu").classList.toggle("ativo");
-            }
-        </script>
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Júnior Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Indie+Flower&family=Orbitron:wght@400..900&family=Qwigley&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <body>
-        
-        <main>
+<body>
 
-            <header class="topo">
-                <div class="logo">ronidev0501</div>
+  <header>
+    <div class="hdr-wrap">
 
-                <nav id="menu">
-                    <a href="#projetos">Projetos</a>
-                    <a href="#formacao">Formação</a>
-                    <a href="https://wa.me/5512996579815?text=Olá%20Ronivaldo,%20vi%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20uma%20oportunidade." target="_blank">
-                        Contato
-                    </a>
-                </nav>
+      <div class="hdr-logo">
+        <div class="hdr-logo-icon">Roni</div>
+        <span class="hdr-logo-name">Jr. Developer</span>
+      </div>
 
-                <div class="hamburguer" onclick="toggleMenu()">
-                    ☰
-                </div>
-            </header>
+      <nav class="hdr-nav" id="hdr-nav">
+        <a href="#home">Home</a>
+        <a href="#formacoes">Formações</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#footer">Redes Sociais</a>
+      </nav>
 
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Desenvolvedor Front-End Jr</h1>
-                    <p>Crio interfaces modernas, responsivas e bem estruturadas com HTML, CSS e GitHub.</p>
+      <div class="hdr-actions">
+        <button class="hdr-theme" onclick="document.body.classList.toggle('dark')" aria-label="Alternar tema">☽</button>
 
-                    <div class="hero-buttons">
-                        <a href="#projetos" class="btn-primary">Ver Projetos</a>
-                        <a href="https://www.linkedin.com/in/jrads" target="_blank" class="btn-secondary">LinkedIn</a>
-                    </div>
-                </div>
-            </section>
+        <button class="hdr-hamburger" id="hdr-hamburger" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-        <header> 
-            <section class="perfil">
-                <img src="imagens/img.perfil,jpeg.jfif" class="foto">
-            
-                <h2>Ronivaldo de Carvalho Brito</h2>
+        <button class="hdr-cta" onclick="document.body.classList.toggle('dark')">Dark / Light</button>
+      </div>
 
-                <p class="resumo">
-                    Estudante de Análise e Desenvolvimento de Sistemas com foco em Front-End.
-                    Desenvolvo projetos práticos utilizando HTML, CSS e GitHub, com atenção à responsividade
-                    e experiência do usuário.
-                </p>
-                <br>
-            </section>
+    </div>
+  </header>
 
-            <section>
-                <h2>HARD SKILLS</h2>
+  <!-- HERO SECTION -->
+  <section class="hero">
 
-                <div class="paixoes">
-                    <ul>
-                        <li><img src="imagens/paixao1.PNG"> HTML5</li>
-                        <li><img src="imagens/paixao2.PNG"> CSS3</li>
-                        <li><img src="imagens/paixao3.PNG"> GitHub</li>
-                    </ul>
-                </div>
-            </section>
+   <picture>
+     <source media="(min-width: 1024px)" srcset="imagens/Gemini_Generated_Image_x1lrw9x1lrw9x1lr (1).jpg">
+     <img class="hero-image" src="imagens/img.perfil,jpeg.jfif" alt="imagem.front-end">
+   </picture>
 
-            <!-- PROJETOS -->
-            <section id="projetos">
-                <h2>PROJETOS</h2>
+   <div class="hero-content">
+     <h1 class="hero-title">
+       Desenvolvedor <br> Front-End Jr
+     </h1>
 
-                <div class="projeto">
-                    <h4>🚗 LANDING PAGE UBER</h4>
+     <p class="hero-text">
+       Bem-vindo ao meu portfólio. Aqui você encontra meus projetos,
+       formações e trajetória como desenvolvedor front-end júnior —
+       sempre aprendendo, sempre evoluindo.
+     </p>
 
-                    <p>
-                        Projeto inspirado na interface da Uber, desenvolvido com HTML e CSS,
-                        focado em responsividade e organização de layout.
-                    </p>
+     <div class="hero-buttons">
+       <a href="#projetos" class="btn-primary">
+         Ver Projetos
+       </a>
+ 
+       <a href="https://www.linkedin.com/in/jrads"
+         target="_blank"
+         class="btn-secondary btn-linkedin">
+         LinkedIn
+       </a>
+     </div>
+   </div>
+  </section>
+ <h2 id="home">Ronivaldo de Carvalho Brito</h2>
 
-                    <a href="https://ronidev0501.github.io/uber.project/" target="_blank">
-                        <img src="imagens/uber.PNG" class="img-projeto">
-                    </a>
-                </div>
+  <p class="resumo">
+    Estudante de Análise e Desenvolvimento de Sistemas com foco em Front-End.
+    Desenvolvo projetos práticos utilizando HTML, CSS e GitHub, com atenção à responsividade
+    e experiência do usuário.
+  </p>
 
-                <div class="projeto">
-                    <h4>💅 SITE MANICURE</h4>
+  <br>
 
-                    <p>
-                        Página voltada para serviços de beleza, com design moderno,
-                        foco em apresentação visual e experiência do usuário.
-                    </p>
+ <section>
+    <h2>HARD SKILLS</h2>
 
-                    <a href="https://ronidev0501.github.io/manicure.test/" target="_blank">
-                        <img src="imagens/maniq.PNG" class="img-projeto">
-                    </a>
-                </div>
+    <div class="paixoes">
+      <ul>
+        <li><img src="imagens/paixao1.PNG"> HTML5</li>
+        <li><img src="imagens/paixao2.PNG"> CSS3</li>
+        <li><img src="imagens/paixao3.PNG"> GitHub</li>
+      </ul>
+    </div>
+ </section>
 
-                <div class="projeto">
-                    <h4>🪒 BARBEARIA</h4>
+  <!-- PROJETOS --> 
+  <section id="projetos">
+    <h2 id="projetos">PROJETOS</h2>
 
-                    <p>
-                        Projeto de site institucional com layout responsivo,
-                        organização de conteúdo e navegação simples.
-                    </p>
+   <div class="projeto1">
+      <h4>🚗UBER</h4>
 
-                    <a href="https://ronidev0501.github.io/barber.shop.2026/" target="_blank">
-                        <img src="imagens/barba.PNG" class="img-projeto">
-                    </a>
-                </div>
-            </section>
-            <br>
+      <p>
+        Projeto inspirado na interface da Uber, desenvolvido com HTML e CSS,
+        focado em responsividade e organização de layout.
+      </p>
 
-            <!-- FORMAÇÃO -->
-            <section id="formacao">
-                <h2>FORMAÇÃO</h2>
-                    <br>
-                <ul class="lista">
+      <a href="https://ronidev0501.github.io/uber.project/" target="_blank">
+        <img src="imagens/uber.PNG" class="img-projeto">
+      </a>
+   </div>
 
-                    <li>
-                        <a href="https://www.linkedin.com/in/jrads/overlay/1767276246647/single-media-viewer?type=LINK&profileId=ACoAADIa5EYBWXVpuuKYQ7CvK9kUZoVja_r3FX0&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bf5yXO67JRu2TEycvVBr0oQ%3D%3D" target="_blank">
-                            <img src="imagens/anhang.png" alt="anhanguera">
-                        </a>
-                        <div class="card-texto">
-                            <strong>Tecnólogo ADS</strong>
-                            <span class="detalhes"></span>
-                            DECLARAÇÃO MATRÍCULA:<br>
-                            <a href="https://www.linkedin.com/in/jrads/overlay/1767276246647/single-media-viewer?type=LINK&profileId=ACoAADIa5EYBWXVpuuKYQ7CvK9kUZoVja_r3FX0&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bf5yXO67JRu2TEycvVBr0oQ%3D%3D" target="_blank">Declaração: Atestado de Matrícula</a>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">
-                            <img src="imagens/curso.videe.png" alt="curso em vídeo">
-                        </a>
-                        
-                        <div class="card-texto">
-                            <strong>Curso em Vídeo - I.A (Módulo 01)</strong>
-                            COD VAL: 12F624-3B54F-9
-                            <span class="detalhes"></span>
-                            <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">Acessar certificado</a>
-                        </div>
-                    </li>
+   <div class="projeto">
+     <h4>💅MANICURE</h4>
 
-                    <li>
-                        <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">
-                            <img src="imagens/curso.videe.png" alt="curso em vídeo">
-                        </a>
+     <p>
+      Página voltada para serviços de beleza, com design moderno,
+      foco em apresentação visual e experiência do usuário.
+     </p>
 
-                        <div class="card-texto">
-                            <strong>Curso em Vídeo - HTML5 e CSS3 (Módulo 01)</strong>
-                            COD VAL: 12F624-C9E9-A
-                            <span class="detalhes"></span>
-                            <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">Acessar certificado</a>
-                        </div>
-                    </li>
+     <a href="https://ronidev0501.github.io/manicure.test/" target="_blank">
+     <img src="imagens/maniq.PNG" class="img-projeto">
+     </a>
+   </div>
 
-                    <li>
-                        <a href="https://upcursosgratis.com.br/validar-certificado" target="_blank">
-                            <img src="imagens/loggo.up.png" alt="UP cursos"> 
-                        </a>
+   <div class="projeto">
+     <h4>🪒 BARBEARIA</h4>
 
-                        <div class="card-texto">
-                            <strong>Tecnologia da Informação</strong>
-                            COD VAL: 295656
-                            <span class="detalhes"></span>
-                            <a href="https://upcursosgratis.com.br/validar-certificado" target="_blank">Acessar certificado</a>
-                        </div>
-                    </li>
+     <p>
+       Projeto de site institucional com layout responsivo,
+       organização de conteúdo e navegação simples.
+     </p>
 
-                    <li>
-                        <a href="https://drive.google.com/file/d/1ySrSq_lkfF9Y9seGpm6kLpmTuIr1hQWv/view?usp=sharing" target="_blank">
-                            <img src="imagens/alura.png" alt="Alura">
-                        </a>
-                        
-                        <div class="card-texto">
-                            <strong>Imersão IA – Alura (#4 Imersão I.A)</strong>
-                            CERTIFICADO:
-                            <span class="detalhes"></span>
-                            <a href="https://drive.google.com/file/d/1ySrSq_lkfF9Y9seGpm6kLpmTuIr1hQWv/view?usp=sharing" target="_blank">Acessar certificado</a>
-                        </div>
-                    </li>   
+     <a href="https://ronidev0501.github.io/barber.shop.2026/" target="_blank">
+     <img src="imagens/barba.PNG" class="img-projeto">
+     </a>
+   </div>
+ </section>
 
-                    <li>
-                        <a href="https://drive.google.com/file/d/1-sX5zzpAOSGtLc8sG9D9dQoXOJESlTaz/view" target="_blank">
-                            <img src="imagens/hashtag.png" alt="Hashtag">
-                        </a>
-                        
-                        <div class="card-texto">
-                            <strong>Imersão IA - Hashtag Treinamentos</strong>
-                            CERTIFICADO:
-                            <span class="detalhes"></span>
-                            <a href="https://drive.google.com/file/d/1-sX5zzpAOSGtLc8sG9D9dQoXOJESlTaz/view" target="_blank">Acessar certificado</a>
-                        </div>
-                    </li>
+ <br>
 
-                </ul>
-            </section>
+ <section id="formacao">
+   <h2 id="formacoes">FORMAÇÃO</h2>
+   
+   <ul class="lista">
+     <li>
+       <a href="https://www.linkedin.com/in/jrads/overlay/1767276246647/single-media-viewer?type=LINK&profileId=ACoAADIa5EYBWXVpuuKYQ7CvK9kUZoVja_r3FX0&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bf5yXO67JRu2TEycvVBr0oQ%3D%3D" target="_blank">
+         <img src="imagens/anhang.png" alt="anhanguera">
+       </a>
+       <div class="card-texto">
+         <strong>Tecnólogo ADS</strong>
+         <span class="detalhes"></span>
+         DECLARAÇÃO MATRÍCULA:<br>
+         <a href="https://www.linkedin.com/in/jrads/overlay/1767276246647/single-media-viewer?type=LINK&profileId=ACoAADIa5EYBWXVpuuKYQ7CvK9kUZoVja_r3FX0&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bf5yXO67JRu2TEycvVBr0oQ%3D%3D" target="_blank">Declaração: Atestado de Matrícula</a>
+       </div>
+     </li>             
+     <li>
+       <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">
+        <img src="imagens/curso.videe.png" alt="curso em vídeo">
+       </a>
+      
+       <div class="card-texto">
+          <strong>Curso em Vídeo - I.A (Módulo 01)</strong>
+         COD VAL: 12F624-3B54F-9
+         <span class="detalhes"></span>
+         <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">Acessar certificado</a>
+       </div>
+     </li>
 
-            <footer>
-              <div class="footer-container">
-                    <div class="icones">
-                        <a href="https://github.com/ronidev0501" target="_blank" rel="noopener noreferrer">
-                            <img src="imagens/github.PNG" alt="Ícone do GitHub">
-                        </a>
+     <li>
+      <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">
+       <img src="imagens/curso.videe.png" alt="curso em vídeo">
+      </a>
+
+      <div class="card-texto">
+        <strong>Curso em Vídeo - HTML5 e CSS3 (Módulo 01)</strong>
+        COD VAL: 12F624-C9E9-A
+        <span class="detalhes"></span>
+        <a href="https://www.cursoemvideo.com/validacao-de-certificado/" target="_blank">Acessar certificado</a>
+      </div>
+     </li>
+
+     <li>
+       <a href="https://upcursosgratis.com.br/validar-certificado" target="_blank">
+        <img src="imagens/loggo.up.png" alt="UP cursos"> 
+       </a>
+
+       <div class="card-texto">
+        <strong>Tecnologia da Informação</strong>
+        COD VAL: 295656
+        <span class="detalhes"></span>
+        <a href="https://upcursosgratis.com.br/validar-certificado" target="_blank">Acessar certificado</a>
+       </div>
+     </li>
+
+     <li>
+       <a href="https://drive.google.com/file/d/ 1ySrSq_lkfF9Y9seGpm6kLpmTuIr1hQWv/view?usp=sharing" target="_blank">
+        <img src="imagens/alura.png" alt="Alura">
+       </a>
+      
+       <div class="card-texto">
+        <strong>Imersão IA – Alura (#4 Imersão I.A)</strong>
+        CERTIFICADO:
+        <span class="detalhes"></span>
+        <a href="https://drive.google.com/file/d/1ySrSq_lkfF9Y9seGpm6kLpmTuIr1hQWv/view?usp=sharing" target="_blank">Acessar certificado</a>
+       </div>
+     </li>   
+
+     <li>
+       <a href="https://drive.google.com/file/d/1-sX5zzpAOSGtLc8sG9D9dQoXOJESlTaz/view" target="_blank">
+         <img src="imagens/hashtag.png" alt="Hashtag">
+       </a>
+      
+       <div class="card-texto">
+         <strong>Imersão IA - Hashtag Treinamentos</strong>
+         CERTIFICADO:
+         <span class="detalhes"></span>
+         <a href="https://drive.google.com/file/d/1-sX5zzpAOSGtLc8sG9D9dQoXOJESlTaz/view" target="_blank">Acessar certificado</a>
+       </div>
+     </li>
+    </ul>
+ </section>
+
+ <script>
+    const btn = document.getElementById('hdr-hamburger');
+    const nav = document.getElementById('hdr-nav');
+
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      nav.classList.toggle('open');
+    });
+  </script>
+
+  <footer id="footer">
+   <div class="footer-container">
+     <div class="icones">
+        <a href="https://github.com/ronidev0501" target="_blank" rel="noopener noreferrer">
+          <img src="imagens/github.PNG" alt="Ícone do GitHub">
+        </a>
                             
-                        <a href="https://www.linkedin.com/in/jrads" target="_blank">
-                            <img src="imagens/linkedin.files.png" alt="Ícone LinkedIn">
-                        </a>
+        <a href="https://www.linkedin.com/in/jrads" target="_blank">
+          <img src="imagens/linkedin.files.png" alt="Ícone LinkedIn">
+        </a>
 
-                        <a href="https://wa.me/5512996579815?text=Ol%C3%A1%2C%20analista%20de%20sitemas%20jr%2F%20front%20end%20jr%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20portf%C3%B3lio.." target="_blank">
-                            <img src="imagens/whatsapp.jpg" alt="Ícone Whatsapp">
-                        </a>      
-                    </div> 
+       <a href="https://wa.me/5512996579815?text=Ol%C3%A1%2C%20analista%20de%20sitemas%20jr%2F%20front%20end%20jr%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20portf%C3%B3lio.." target="_blank">
+         <img src="imagens/whatsapp.jpg" alt="Ícone Whatsapp">
+       </a>      
+     </div> 
 
-                    <p class="copyright">
-                        &copy; 2026 ronidev0501
-                    </p>
-              </div>
-            </footer>
-        </main>
-    </body>
+     <p class="copyright"> 
+        &copy; 2026 ronidev0501
+     </p>
+   </div>
+ </footer>
+    
+</body>
 </html>
