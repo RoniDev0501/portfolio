@@ -21,6 +21,15 @@ body {
 
 body.dark {
   background: #0a0a0a;
+  color: #F5F0E8; /* ← isso já resolve a maioria dos textos */
+}
+
+body.dark h2,
+body.dark h4,
+body.dark p,
+body.dark li,
+body.dark span {
+  color: #F5F0E8;
 }
 
 img {
@@ -361,6 +370,9 @@ body.dark .hero-text {
   color: #888;
 }
 
+body.dark footer {
+  background: #121b15;
+}
 /* ===== FORMAÇÃO - CARDS ===== */
 
 /* Remove bullets e espaçamentos padrão da <ul> */
@@ -579,7 +591,7 @@ footer {
   gap: 12px;                  /* espaço entre a linha de ícones e o copyright */
   padding: 10px 0;            /* respiro acima e abaixo do footer */
   background-color: #DDD7CD;
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 
@@ -872,6 +884,8 @@ body > h2 {
     justify-content: center;      /* ← centraliza o conjunto */
     align-items: center;          /* ← alinha verticalmente */
     gap: 40px;                    /* ← espaço entre os ícones e o texto */
+    background-color: #DDD7CD;
+  color: #FFFFFF;
     
   }
 
