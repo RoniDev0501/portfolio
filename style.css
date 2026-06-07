@@ -548,6 +548,11 @@ p {
             
 }
 
+.projeto1 p {
+  margin-top:0px;  /* ← espaço entre o h4 e o parágrafo */
+  margin-bottom: 10px; /* ← espaço entre o parágrafo e a imagem */
+}
+
 .projeto p {
   margin-top:0px;  /* ← espaço entre o h4 e o parágrafo */
   margin-bottom: 10px; /* ← espaço entre o parágrafo e a imagem */
@@ -561,13 +566,22 @@ h4 {
 
 /* ===== FOOTER ===== */
 
+footer {
+  margin-top: 1.4rem; /* ← aumente conforme precisar */
+  width: calc(100% + 90px);
+  margin-left: -45px;
+}
+
 .footer-container {
   display: flex;              /* coloca ícones e copyright lado a lado ou empilhados */
   flex-direction: column;     /* copyright embaixo dos ícones no mobile */
   align-items: center;        /* centraliza tudo horizontalmente */
   gap: 12px;                  /* espaço entre a linha de ícones e o copyright */
   padding: 24px 0;            /* respiro acima e abaixo do footer */
+  background-color: #DDD7CD;
+    color: #FFFFFF;
 }
+
 
 .icones {
   display: flex;              /* ← isso é o que coloca os ícones lado a lado */
