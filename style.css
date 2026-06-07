@@ -577,7 +577,7 @@ footer {
   flex-direction: column;     /* copyright embaixo dos ícones no mobile */
   align-items: center;        /* centraliza tudo horizontalmente */
   gap: 12px;                  /* espaço entre a linha de ícones e o copyright */
-  padding: 24px 0;            /* respiro acima e abaixo do footer */
+  padding: 10px 0;            /* respiro acima e abaixo do footer */
   background-color: #DDD7CD;
     color: #FFFFFF;
 }
